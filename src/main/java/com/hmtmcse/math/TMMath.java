@@ -6,7 +6,6 @@ import java.math.RoundingMode;
 public class TMMath {
 
     private BigDecimal bigDecimal = null;
-    private String stringNumber = null;
 
     public TMMath(Double number) {
         this.bigDecimal = toBigDecimal(number);
@@ -68,6 +67,10 @@ public class TMMath {
         return this.bigDecimal.intValue();
     }
 
+
+    public String toString(){
+        return this.bigDecimal.toString();
+    }
 
     public TMMath add(Double ...number) {
         for (int i = 0; i < number.length; i++){
