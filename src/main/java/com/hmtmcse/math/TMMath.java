@@ -1,0 +1,202 @@
+package com.hmtmcse.math;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+public class TMMath {
+
+    private BigDecimal bigDecimal = null;
+    private String stringNumber = null;
+
+    public TMMath(Double number) {
+        this.bigDecimal = toBigDecimal(number);
+    }
+
+    public TMMath(Long number) {
+        this.bigDecimal = toBigDecimal(number);
+    }
+
+    public TMMath(Float number) {
+        this.bigDecimal = toBigDecimal(number);
+    }
+
+    public TMMath(BigDecimal number) {
+        this.bigDecimal = number;
+    }
+
+    public TMMath(String number) {
+        this.bigDecimal = toBigDecimal(number);
+    }
+
+
+    private TMMath() {}
+
+    public TMMath(Integer number) {
+        this.bigDecimal = toBigDecimal(number);
+    }
+
+    public BigDecimal toBigDecimal(Double number){
+        return BigDecimal.valueOf(number);
+    }
+
+    public BigDecimal toBigDecimal(Integer number){
+        return BigDecimal.valueOf(number);
+    }
+
+    public BigDecimal toBigDecimal(String number){
+        return new BigDecimal(number);
+    }
+
+    public BigDecimal toBigDecimal(Long number){
+        return BigDecimal.valueOf(number);
+    }
+
+
+    public BigDecimal toBigDecimal(Float number){
+        return BigDecimal.valueOf(number);
+    }
+
+    public Double toDouble(){
+        return this.bigDecimal.doubleValue();
+    }
+
+    public Long toLong(){
+        return this.bigDecimal.longValue();
+    }
+
+    public Integer toInteger(){
+        return this.bigDecimal.intValue();
+    }
+
+
+    public TMMath add(Double number){
+        this.bigDecimal = this.bigDecimal.add(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath add(Integer number){
+        this.bigDecimal = this.bigDecimal.add(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath add(Long number){
+        this.bigDecimal = this.bigDecimal.add(this.toBigDecimal(number));
+        return this;
+    }
+
+
+    public TMMath add(Float number){
+        this.bigDecimal = this.bigDecimal.add(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath multiply(Double number){
+        this.bigDecimal = this.bigDecimal.multiply(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath multiply(Integer number){
+        this.bigDecimal = this.bigDecimal.multiply(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath multiply(Long number){
+        this.bigDecimal = this.bigDecimal.multiply(this.toBigDecimal(number));
+        return this;
+    }
+
+
+    public TMMath multiply(Float number){
+        this.bigDecimal = this.bigDecimal.multiply(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath subtract(Double number){
+        this.bigDecimal = this.bigDecimal.subtract(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath subtract(Integer number){
+        this.bigDecimal = this.bigDecimal.subtract(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath subtract(Long number){
+        this.bigDecimal = this.bigDecimal.subtract(this.toBigDecimal(number));
+        return this;
+    }
+
+
+    public TMMath subtract(Float number){
+        this.bigDecimal = this.bigDecimal.subtract(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath divide(Double number, RoundingMode roundingMode){
+        this.bigDecimal = this.bigDecimal.divide(this.toBigDecimal(number), roundingMode);
+        return this;
+    }
+
+    public TMMath divide(Double number){
+        this.bigDecimal = this.bigDecimal.divide(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath divide(Integer number){
+        this.bigDecimal = this.bigDecimal.divide(this.toBigDecimal(number));
+        return this;
+    }
+
+    public TMMath divide(Long number){
+        this.bigDecimal = this.bigDecimal.divide(this.toBigDecimal(number));
+        return this;
+    }
+
+
+    public TMMath divide(Float number){
+        this.bigDecimal = this.bigDecimal.divide(this.toBigDecimal(number));
+        return this;
+    }
+
+    private BigDecimal roundBig(Integer scale, RoundingMode roundingMode){
+        return this.bigDecimal.setScale(scale, roundingMode);
+    }
+
+    public TMMath round(Integer scale, RoundingMode roundingMode){
+        this.bigDecimal = this.roundBig(scale, roundingMode);
+        return this;
+    }
+
+    public TMMath mathRound(Integer scale){
+        this.bigDecimal = this.roundBig(scale, RoundingMode.HALF_UP);
+        return this;
+    }
+
+    public static TMMath start(Long number){
+        return new TMMath(number);
+    }
+
+    public static TMMath start(Float number){
+        return new TMMath(number);
+    }
+
+
+    public static TMMath start(Integer number){
+        return new TMMath(number);
+    }
+
+
+    public static TMMath start(Double number){
+        return new TMMath(number);
+    }
+
+    public static TMMath start(BigDecimal number){
+        return new TMMath(number);
+    }
+
+
+    public static TMMath fromString(String number){
+        return new TMMath(number);
+    }
+
+}
