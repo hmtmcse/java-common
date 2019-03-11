@@ -25,6 +25,17 @@ public class TestMain {
         System.out.println("TMMath Divide: " + TMMath.start(10).divide(2).toDouble());
 
 
+        System.out.println("");
+        Double roundDub = 10.00;
+        Integer roundInt = 10;
+        Double roundFloat = 10.0123;
+        Integer roundLong = 10;
+        System.out.println("TMMath Rounding Double Test (" + roundDub + "): " + TMMath.start(roundDub).mathRound(2).toString());
+        System.out.println("TMMath Rounding Int Test (" + roundInt + "): " + TMMath.start(roundInt).mathRound(2).toString());
+        System.out.println("TMMath Rounding Float Test (" + roundFloat + "): " + TMMath.start(roundFloat).mathRound(2).toString());
+        System.out.println("TMMath Rounding Long Test (" + roundLong + "): " + TMMath.start(roundLong).mathRound(2).toString());
+
+
     }
 
 
