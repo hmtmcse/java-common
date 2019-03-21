@@ -23,6 +23,7 @@ public interface FileHelperDef {
     public FileHelperResponseDef getAttributes(FileHelperRequestDef requestDef) throws FileHelperException;
     public FileHelperResponseDef changeAllAttributes(FileHelperRequestDef requestDef) throws FileHelperException;
     public FileHelperResponseDef makeDir(FileHelperRequestDef requestDef) throws FileHelperException;
+    public FileHelperResponseDef makeDirIfNotExist(FileHelperRequestDef requestDef) throws FileHelperException;
     public FileHelperResponseDef removeAndMakeDir(FileHelperRequestDef requestDef) throws FileHelperException;
     public FileHelperResponseDef rename(FileHelperRequestDef requestDef) throws FileHelperException;
 
@@ -35,6 +36,7 @@ public interface FileHelperDef {
     public Boolean isExist(String path) throws FileHelperException;
     public Boolean isExistDirectory(String path) throws FileHelperException;
     public Boolean isEmptyDirectory(String path) throws FileHelperException;
+    public Boolean isItSaymbolicLink(String path) throws FileHelperException;
 
 
     public FileHelperResponseDef listAllFileAndDirectory(FileHelperRequestDef requestDef) throws FileHelperException;
