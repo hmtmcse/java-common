@@ -1,4 +1,4 @@
-package com.hmtmcse.common.email;
+package com.hmtmcse.email;
 
 /**
  * Created by Touhid Mia on 11/09/2014.

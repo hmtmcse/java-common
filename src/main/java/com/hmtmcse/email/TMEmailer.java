@@ -1,4 +1,4 @@
-package com.hmtmcse.common.email;
+package com.hmtmcse.email;
 
 import javax.mail.*;
 import javax.mail.internet.AddressException;
