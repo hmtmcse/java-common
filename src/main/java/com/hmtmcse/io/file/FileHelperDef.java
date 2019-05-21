@@ -36,7 +36,7 @@ public interface FileHelperDef {
     public Boolean isExist(String path) throws FileHelperException;
     public Boolean isExistDirectory(String path) throws FileHelperException;
     public Boolean isEmptyDirectory(String path) throws FileHelperException;
-    public Boolean isItSaymbolicLink(String path) throws FileHelperException;
+    public Boolean isItSymbolicLink(String path) throws FileHelperException;
 
 
     public FileHelperResponseDef listAllFileAndDirectory(FileHelperRequestDef requestDef) throws FileHelperException;
