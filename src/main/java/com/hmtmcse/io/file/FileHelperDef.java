@@ -39,6 +39,6 @@ public interface FileHelperDef {
     public Boolean isItSymbolicLink(String path) throws FileHelperException;
 
 
-    public FileHelperResponseDef listAllFileAndDirectory(FileHelperRequestDef requestDef) throws FileHelperException;
+    public <T> FileHelperResponseDef listAllFileAndDirectory(T requestDef) throws FileHelperException;
 
 }

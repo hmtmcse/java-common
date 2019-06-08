@@ -1,4 +1,4 @@
 package com.hmtmcse.io.file;
 
-public interface FileHelperRequestDef {
+public interface FileHelperRequestDef<T> {
 }

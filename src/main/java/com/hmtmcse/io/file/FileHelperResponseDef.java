@@ -1,4 +1,4 @@
 package com.hmtmcse.io.file;
 
-public interface FileHelperResponseDef {
-}
+
+public interface FileHelperResponseDef{}
