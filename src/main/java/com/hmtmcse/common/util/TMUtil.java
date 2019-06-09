@@ -6,6 +6,7 @@ import com.hmtmcse.common.TMConfigHolder;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 public class TMUtil {
 
@@ -15,6 +16,11 @@ public class TMUtil {
         }
     }
 
+
+    public static Integer randomInteger() {
+        Random rnd = new Random();
+        return 100000 + rnd.nextInt(999999);
+    }
 
     public static String concatLocation(String first, String second){
         if (first.endsWith("/") || first.endsWith("\\")){
