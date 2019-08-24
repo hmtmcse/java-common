@@ -2,6 +2,7 @@ plugins {
     id 'java'
 }
 
+
 group 'com.hmtmcse'
 version '1.0-SNAPSHOT'
 
@@ -15,3 +16,21 @@ dependencies {
     compile group: 'javax.mail', name: 'mail', version: '1.4.7'
     compile group: 'javax.websocket', name: 'javax.websocket-client-api', version: '1.1'
 }
+
+jar{
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    manifest {
+        attributes (
+                'Implementation-Title': 'HMTM Common Jar',
+                'Implementation-Version': version,
+                'Main-Class': 'com.hmtmcse.common.Bismillah'
+        )
+    }
+}
+
+
+
+
+
