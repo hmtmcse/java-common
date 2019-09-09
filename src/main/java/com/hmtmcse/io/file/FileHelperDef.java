@@ -1,5 +1,7 @@
 package com.hmtmcse.io.file;
 
+import java.io.File;
+
 public interface FileHelperDef {
 
     public FileHelperResponseDef copy(FileHelperRequestDef requestDef) throws FileHelperException;
@@ -37,7 +39,7 @@ public interface FileHelperDef {
     public Boolean isExistDirectory(String path) throws FileHelperException;
     public Boolean isEmptyDirectory(String path) throws FileHelperException;
     public Boolean isItSymbolicLink(String path) throws FileHelperException;
-
+    public File getFile(String location) throws FileHelperException;
 
 
     public FileHelperResponseDef listAllFileAndDirectory(FileHelperRequestDef requestDef) throws FileHelperException;
