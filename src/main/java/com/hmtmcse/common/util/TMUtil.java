@@ -1,6 +1,7 @@
 package com.hmtmcse.common.util;
 
 
+import com.hmtmcse.common.CommonConst;
 import com.hmtmcse.common.TMConfigHolder;
 
 import java.io.File;
@@ -9,6 +10,19 @@ import java.util.Map;
 import java.util.Random;
 
 public class TMUtil {
+
+    public static String testContentPath(String moduleName) {
+        File file = new File(CommonConst.TEST_CONTENT_DIRECTORY);
+        String modulePath = CommonConst.ALL_MODULE_DIRECTORY + "/" + moduleName + "/" + CommonConst.TEST_CONTENT_DIRECTORY;
+        if (file.exists()) {
+            return file.getAbsolutePath();
+        }
+        file = new File(modulePath);
+        if (file.exists()) {
+            return file.getAbsolutePath();
+        }
+        return null;
+    }
 
     public static void print(Object object){
         if (TMConfigHolder.isDebug){
