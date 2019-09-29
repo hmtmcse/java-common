@@ -24,6 +24,19 @@ public class TMUtil {
         return null;
     }
 
+    public static String rootPath(String moduleName) {
+        String modulePath = CommonConst.ALL_MODULE_DIRECTORY + "/" + moduleName;
+        File file = new File(modulePath);
+        if (file.exists()) {
+            return file.getAbsolutePath();
+        }
+        file = new File(".");
+        if (file.exists()) {
+            return file.getAbsolutePath();
+        }
+        return null;
+    }
+
     public static void print(Object object){
         if (TMConfigHolder.isDebug){
             System.out.println(object);
