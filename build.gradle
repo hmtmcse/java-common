@@ -4,7 +4,7 @@ plugins {
 
 
 group 'com.hmtmcse'
-version '1.0-SNAPSHOT'
+version '1.0.0'
 
 sourceCompatibility = 1.8
 
@@ -30,6 +30,71 @@ jar{
     }
 }
 
+
+Boolean isPublish = false
+if (isPublish) {
+    bintray {
+        user = (project.hasProperty('bintrayUser') ? project.property('bintrayUser') : "hmtmcse" )
+        key =  (project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : "123" )
+        publish = true
+        dryRun = false
+        publications = ['mavenJava']
+        pkg {
+            repo = 'maven'
+            name = 'com.hmtmcse.common'
+            vcsUrl = 'https://github.com/hmtmcse/java-common.git'
+            licenses = ['Apache-2.0']
+        }
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                artifactId = 'java-common'
+                groupId = 'com.hmtmcse'
+                from components.java
+                artifact sourcesJar
+                versionMapping {
+                    usage('java-api') {
+                        fromResolutionOf('runtimeClasspath')
+                    }
+                    usage('java-runtime') {
+                        fromResolutionResult()
+                    }
+                }
+                pom {
+                    name = 'Common for all HMTM libries'
+                    description = 'This Library Provide Help like common operation.'
+                    url = 'https://hmtmcse.github.io/java-common'
+                    licenses {
+                        license {
+                            name = 'The Apache License, Version 2.0'
+                            url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'hmtmcse'
+                            name = 'H.M Touhid Mia'
+                            email = 'hmtm.cse@gmail.com'
+                        }
+                    }
+                    scm {
+                        connection = 'scm:git:https://github.com/hmtmcse/java-common.git'
+                        developerConnection = 'scm:git:https://github.com/hmtmcse/java-common.git'
+                        url = 'https://github.com/hmtmcse/java-common'
+                    }
+                }
+            }
+        }
+    }
+
+    signing {
+        sign publishing.publications.mavenJava
+    }
+
+
+}
 
 
 
