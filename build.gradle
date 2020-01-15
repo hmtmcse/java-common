@@ -6,8 +6,6 @@ plugins {
 group 'com.hmtmcse'
 version '1.0.1'
 
-sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
